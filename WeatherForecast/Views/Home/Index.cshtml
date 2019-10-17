@@ -1,0 +1,7 @@
+﻿<div class="main-page">
+	<form asp-action="Weather" method="post">
+		<label for="city">City name</label>
+		<input name="city" type="text" value="@ViewData["LastCity"]"/>
+		<input type="submit" />
+	</form>
+</div>

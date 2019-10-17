@@ -1,0 +1,24 @@
+﻿@model WeatherForecast.ViewModels.WeatherViewModel
+<form asp-action="Weather" method="post">
+	<label for="city">City name</label>
+	<input name="city" type="text" value="@ViewData["LastCity"]" />
+	<input type="submit" />
+</form>
+<table class="table table-sm table-striped">
+	<thead>
+		<tr><th>Lowest temperature</th><th>Highest temperature</th><th>Precipitation</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>@Model.LowestTemp</td>
+			<td>@Model.HighestTemp</td>
+			<td>@Model.Precipitation</td>
+		</tr>
+	</tbody>
+</table>
+@if (ViewData.ContainsKey("WarningMessage"))
+{
+	<div>
+		<p>@ViewData["WarningMessage"]</p>
+	</div>
+}
